@@ -1,0 +1,192 @@
+<!-- Tasks
+1.Make slider as in figma (try to use Swiper.js)
+2.Make video-darker responsive to video size -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MySixthSite</title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.svg">
+	<!-- reset.css -->
+	<link rel="stylesheet" href="librarys/reset/reset.css">
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<!-- Slick slider + jQuery -->
+	<link rel="stylesheet" href="librarys/slick/css/slick.css">
+	<link rel="stylesheet" href="librarys/slick/css/slick-theme.css">
+	<script src="librarys/slick/js/slick.min.js"></script>
+	<!-- css js -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script defer src="js/script.js"></script>
+</head>
+
+<body>
+
+	<main>
+		<div class="container">
+			<nav>
+				<svg class="logo" width="176" height="32" viewBox="0 0 176 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M81.2723 15.0027V31.5771H85.9912V16.1375C85.9912 14.8335 87.0485 13.7762 88.3525 13.7762H93.23V9.11719H87.1613C83.9084 9.11719 81.2723 11.7498 81.2723 15.0027Z" fill="#114455"/>
+					<path d="M20.1445 8.62732C14.7454 8.62732 10.5727 12.5674 10.5727 17.4837V24.7154C10.5551 25.0925 10.3824 25.4731 10.1745 25.8079C9.63877 26.6784 8.74714 27.1718 7.72864 27.1718H7.68282C6.67489 27.1718 5.74802 26.6326 5.24758 25.7586L5.15595 25.5965C4.95507 25.2476 4.84934 24.8529 4.84934 24.4511V23.6969H4.85286V9.12424H0.00352423V21.4802H0V24.1586C0 25.4872 0.352423 26.7947 1.01498 27.9366L1.09251 28.074C2.43524 30.3965 4.9304 31.8097 7.61586 31.8485C7.65463 31.8485 7.69339 31.8485 7.73216 31.8485C10.3718 31.8485 12.7683 30.5128 14.1568 28.2643C14.6044 27.5383 14.9427 26.7419 15.133 25.9172C15.2564 25.3815 15.2916 24.8282 15.2916 24.2784V18.1145C15.2916 16.2044 16.215 12.9445 20.1445 12.9445C22.7524 12.9445 24.4582 14.8758 24.4582 18.1145V31.5524H29.2687V17.4837C29.2687 12.222 25.089 8.62732 20.1445 8.62732Z" fill="#114455"/>
+					<path d="M42.3788 26.6043L36.4123 9.12769H31.3797L38.8158 29.3462C39.3621 30.8299 40.7753 31.8167 42.3577 31.8167C43.9365 31.8167 45.3497 30.8334 45.896 29.3532L53.3779 9.12769H48.2995L42.3788 26.6043Z" fill="#114455"/>
+					<path d="M66.0227 8.62732C59.369 8.62732 54.9672 13.6599 54.9672 20.3137C54.9672 26.9216 59.3725 32 66.0227 32C72.6729 32 77.0782 26.9216 77.0782 20.3137C77.0782 13.6634 72.6729 8.62732 66.0227 8.62732ZM66.0227 27.5947C62.428 27.5947 59.6861 24.4934 59.6861 20.3137C59.6861 16.0881 62.428 13.0326 66.0227 13.0326C69.6632 13.0326 72.3593 16.0881 72.3593 20.3137C72.3593 24.4934 69.6632 27.5947 66.0227 27.5947Z" fill="#114455"/>
+					<path d="M2.41135 4.8141H2.45012C3.77875 4.8141 4.85717 3.73568 4.85717 2.40705C4.85717 1.07841 3.77875 0 2.45012 0H2.41135C1.08272 0 0.00430298 1.07841 0.00430298 2.40705C0.00430298 3.73568 1.08272 4.8141 2.41135 4.8141Z" fill="#114455"/>
+					<path d="M99.5242 4.8141H99.563C100.892 4.8141 101.97 3.73568 101.97 2.40705C101.97 1.07841 100.892 0 99.563 0H99.5242C98.1956 0 97.1172 1.07841 97.1172 2.40705C97.1172 3.73568 98.1956 4.8141 99.5242 4.8141Z" fill="#114455"/>
+					<path d="M173.061 26.8196H173.022C171.693 26.8196 170.615 27.898 170.615 29.2266C170.615 30.5553 171.693 31.6337 173.022 31.6337H173.061C174.389 31.6337 175.468 30.5553 175.468 29.2266C175.468 27.898 174.389 26.8196 173.061 26.8196Z" fill="#114455"/>
+					<path d="M157.413 8.62732C154.552 8.62732 152.046 9.74098 150.312 11.5101C148.624 9.69516 146.171 8.62732 143.482 8.62732C138.083 8.62732 133.91 12.5674 133.91 17.4802V31.5489H138.629V18.1145C138.629 16.2044 139.552 12.9445 143.482 12.9445C146.09 12.9445 147.796 14.8758 147.796 18.1145V31.5524H147.841H152.56H152.606V17.4837C152.606 17.4555 152.603 17.4308 152.603 17.4027C152.818 15.4925 153.938 12.9445 157.413 12.9445C160.021 12.9445 161.727 14.8758 161.727 18.1145V31.5524H166.537V17.4837C166.537 12.222 162.358 8.62732 157.413 8.62732Z" fill="#114455"/>
+					<path d="M119.75 8.58167C113.294 8.58167 109.167 13.5473 109.146 20.3526H109.142V23.5455C109.142 24.3667 108.85 25.1667 108.321 25.7975C107.655 26.5905 106.679 27.0451 105.643 27.0486H105.639C104.603 27.0486 103.627 26.594 102.957 25.7975C102.425 25.1667 102.136 24.3667 102.136 23.542V16.9799H102.132V9.1103H97.3535V23.6477H97.3606C97.3852 25.5579 98.0725 27.4116 99.3095 28.8777C100.888 30.7526 103.197 31.824 105.643 31.824H105.65C108.102 31.8204 110.411 30.742 111.986 28.8671C112.021 28.8248 112.053 28.7755 112.088 28.7297C113.988 30.7773 116.719 31.9508 120.021 31.9508C123.887 31.9508 127.302 30.1958 128.874 27.4574L125.28 25.2548C124.335 26.6469 122.672 27.8169 120.201 27.8169C116.606 27.8169 114.27 25.6143 113.773 21.794H129.505C130.358 14.379 126.897 8.58167 119.75 8.58167ZM113.815 18.2909C114.4 14.8759 116.511 12.6733 119.792 12.6733C123.479 12.6733 125.23 15.5491 125.23 18.2909H113.815Z" fill="#114455"/>
+				</svg>
+
+				<div class="buttons">
+					<a class="button button-a" href="#">About us</a>
+					<button class="button button-outline button-invoriem"><span class="slide-right">Let's talk</span> <span class="arrowRight"></span></button>
+				</div>
+
+			</nav>
+
+			<div class="main_text">
+				<h1 class="title-40-ebold">We build dreams,<br>
+				not just walls</h1>
+				<p class="subTitle-34">Fulfill your international property developments with us</p>
+				<button class="button button-invoriem button-outline"><span class="slide-right">Let's talk</span> <span class="arrowRight"></span></button>
+			</div>
+
+		</div>
+	</main>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<section class="case_studies">
+		<div class="container">
+			<div class="title">
+				<h2 class="title-40-ebold">Case Studies</h2>
+				<p class="subTitle-16">We deliver a unique and truly bespoke approach to delivering international<br>developments to market, with over 10 years success around the world.</p>
+			</div>
+			<!-- waiting for soluton how I can make it as in figma (add a gap) -->
+			<div class="case_studies_slider">
+				<div class="city">
+					<img src="img/slider/France.jpg" alt="">
+					<h2 class="title-40-ebold gradient">France</h2>
+				</div>
+				<div class="city">
+					<img src="img/slider/Moroco.jpg" alt="">
+					<h2 class="title-40-ebold gradient">Moroco</h2>
+				</div>
+				<div class="city">
+					<img  src="img/slider/London.jpg" alt="">
+					<h2 class="title-40-ebold gradient">London</h2>
+				</div>
+				<div class="city">
+					<img src="img/slider/Portugal.jpg" alt="">
+					<h2 class="title-40-ebold gradient">Portugal</h2>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<section class="we_are">
+		<div class="container">
+			<div class="title">
+				<h1 class="title-"></h1>
+				<p class="subTitle-18 text-center"></p>
+			</div>
+			<!-- video -->
+			<div class="video video-darker">
+
+				<button class="video_button" id="video-button">
+					<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="60" cy="60" r="60" fill="black" fill-opacity="0.7"/>
+						<circle cx="60" cy="60" r="59" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
+						<path d="M47 78.1149V42.6235C47 41.0494 48.7341 40.0923 50.0659 40.9312L76.4782 57.5678C77.6814 58.3257 77.7316 60.0617 76.5743 60.8879L50.162 79.7427C48.8382 80.6877 47 79.7414 47 78.1149Z" fill="white"/>
+					</svg>
+				</button>
+
+				<picture class="video_picture">
+					<source media="(max-width: 600px)" srcset="img/we_are/videoPreview.jpg">
+						<img src="img/we_are/videoPreview.jpg" alt="Preview">
+					</picture>
+
+
+					<video class="video_object" id="video-file" loop>
+						<source src="video/we_are.mp4" type="video/mp4">
+						</video>
+
+					</div>
+
+				</div>
+			</section>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<div class="container">
+			<footer class="subTitle-18">
+				
+					<p>Copyright © 2020 Invoriem
+					</p>
+					<p>info@invoriem.com</p>
+					<div class="social_links">
+						<a href="#"><img src="img/footer/instagram.svg" alt=""></a>
+						<a href="#"><img src="img/footer/facebook.svg" alt=""></a>
+						<a href="#"><img src="img/footer/twitter.svg" alt=""></a>
+						<a href="#"><img src="img/footer/linkedIn.svg" alt=""></a>
+					</div>
+				</div>
+			</footer>
+
+			<!-- 16.03.2023 - 18.03.2023 -->
+		</body>
+		</html>
